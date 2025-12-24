@@ -8,6 +8,8 @@
 .env
 .env.development
 .env.production
+mern-portfolio-ec2
+mern-portfolio-ec2.pem
 
 # testing
 /coverage
@@ -21,6 +23,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
 
 npm-debug.log*
 yarn-debug.log*
