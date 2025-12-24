@@ -27,4 +27,4 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error(err));
 
 const PORT = 5000;
-app.listen(PORT, () => console.log(`server is running at http://localhost:${PORT}`));
+app.listen(PORT,'0.0.0.0', () => console.log(`server is running at http://localhost:${PORT}`));
