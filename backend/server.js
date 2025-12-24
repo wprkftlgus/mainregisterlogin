@@ -11,6 +11,8 @@ app.get('/', (req, res) => {
   res.send('backend working...');
 });
 
+app.get('/health', (req, res) => res.status(200).json({ status: 'alive' }));
+
 const userRoutes = require('./routes/user.js');
 app.use('/api', userRoutes);
 
