@@ -12,9 +12,9 @@
 
 **Technologies**: Node.js, Express.js, MongoDB (Mongoose ODM), JWT Authentication
 
-**Deployment**: Render
+**Deployment**: AWS EC2 (Ubuntu Linux), PM2 for Node.js process management, Render
 
-**Features**: REST API, async/await with try/catch, user authentication & authorization
+**Features**: RESTful API architecture, Async/await with structured try/catch error handling, User authentication & authorization using JWT, Environment variable management with .env, Image uploads handled using Base64 encoding and stored in the database
 
 
 ## Front-end
@@ -27,6 +27,7 @@
 # 🧩 Project Description 
 
 This project is a full-stack MERN application with user authentication, CRUD functionality, and post/comment management.
+The backend server is deployed and operated on AWS EC2 (Ubuntu), with PM2 used for process management to ensure continuous service availability even after server reboots.
 
 ### Registration & Login
 
@@ -53,6 +54,29 @@ Users can write comments under posts.
 Each comment stores an author ID, and only the comment author can delete it.
 
 Authorization follows the same logic as posts.
+
+### 🚀 Deployment & Server Management
+
+The backend is hosted on AWS EC2 running Ubuntu.
+
+Secure access is managed using SSH key pairs.
+
+PM2 is used to keep the Node.js server running continuously, even after EC2 instance reboots.
+
+Frontend and backend are connected via REST API calls.
+
+### 📌 Key Takeaways
+
+Implemented a complete MERN stack application with authentication and authorization
+
+Operated a real Linux-based cloud server using AWS EC2
+
+Managed backend process lifecycle using PM2
+
+Handled sensitive configuration using environment variables
+
+Designed authorization logic for posts and comments
+
 
 # 📂 How to Run Locally
 
