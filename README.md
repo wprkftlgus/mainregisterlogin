@@ -5,8 +5,7 @@
 <img width="693" height="830" alt="3" src="https://github.com/user-attachments/assets/ec3ba5f4-9ae3-4cda-9c2a-bc35e68a0680" />
 
 # **🌐 Live Website**
-1. Enter this website to turn the back-end server on: https://mainresisterlogin.onrender.com
-2. Please create a new account to access the dashboard and try uploading posts:  https://mainresgisterlogin.netlify.app
+Please create a new account to access the dashboard and try uploading posts:  https://mainresgisterlogin.netlify.app
 
 ## Back-end 
 
