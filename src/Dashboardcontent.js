@@ -74,8 +74,10 @@ function Dashboardcontent(){
     console.error("Error fetching all posts");
     }};
 
-    const handleSearch = async (e) => {
-      if(e.key === "Enter"){
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        const handleSearch = async (e) => {
+     
         if(!value){
           fetchAllPosts();
           return;
@@ -86,9 +88,10 @@ function Dashboardcontent(){
         setPosts(data);
       } catch(err){
         alert(err.error);
-      }
-      }
-    }
+      }}
+      handleSearch();
+      }, 300);
+  },[value]);
     const [active, setActive] = useState();
     const email = localStorage.getItem('email');
 
@@ -98,7 +101,7 @@ function Dashboardcontent(){
       <div className='holder-top'>
       <div className='searchbox'>
         <img src='/search.png' className='img-search'></img>
-        <input onKeyDown={handleSearch} onChange={(e) => setValue(e.target.value)} value={value} className='search' placeholder='Search'></input>
+        <input onChange={(e) => {setValue(e.target.value)}} value={value} className='search' placeholder='Search'></input>
         {value && <button onClick={(e) => {setValue("")}}>x</button>}
       </div>
         <div onClick={() => {
