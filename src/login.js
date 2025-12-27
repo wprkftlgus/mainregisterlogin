@@ -30,8 +30,6 @@ function Login() {
       if (data.token) {
         localStorage.setItem('token', data.token);
         localStorage.setItem("email", data.email);
-        setMessage('Login Succesed');
-        alert(data.message);
         navigate('/dashboard')
       } else {
         setMessage(data.error);
