@@ -60,7 +60,8 @@ router.get('/search/:value', async (req,res) => {
         const value = req.params.value;
         const postSearched = await Post.find({
             title : {$regex: value, $options: 'i'}
-        });
+        })
+        .populate("author", "email");
         res.json(postSearched);
     } catch(err){
         res.status(500).json({ error: "Failed to search"});

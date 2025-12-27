@@ -86,6 +86,7 @@ function Dashboardcontent(){
         const res = await fetch(`${API_URL}/api/posts/search/${value}`);
         const data = await res.json();
         setPosts(data);
+        console.log(data);
         } catch(err){console.error(err);}
       }
       handleSearch();}, 300);
