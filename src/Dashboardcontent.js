@@ -75,9 +75,9 @@ function Dashboardcontent(){
     }};
 
     useEffect(() => {
+      const controller = new AbortController();
       const timer = setTimeout(() => {
         const handleSearch = async (e) => {
-     
         if(!value){
           fetchAllPosts();
           return;
@@ -86,11 +86,13 @@ function Dashboardcontent(){
         const res = await fetch(`${API_URL}/api/posts/search/${value}`);
         const data = await res.json();
         setPosts(data);
-      } catch(err){
-        alert(err.error);
-      }}
-      handleSearch();
-      }, 300);
+        } catch(err){console.error(err);}
+      }
+      handleSearch();}, 300);
+      return () => {
+        controller.abort();
+        clearTimeout(timer);
+      }
   },[value]);
     const [active, setActive] = useState();
     const email = localStorage.getItem('email');
